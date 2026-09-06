@@ -1,0 +1,33 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  npm registry search + direct name probes, PyPI, and the abreio GitHub organization
+package_count: 0
+note: >-
+  No first-party Abre client library exists on any public registry. npm search for "abre" returns
+  only unrelated packages (the 2014 `abre` browser-window package, plus Portuguese/Spanish-language
+  packages whose descriptions contain the verb "abre"); `abre-io`, `abre-sdk` and `@abre/sdk` are
+  all 404 on npm, and `abre`, `abre-io` and `abre-sdk` are all 404 on PyPI. The company's GitHub
+  organization, https://github.com/abreio, is real and current (description "Abre is K-12's #1
+  modern data solution", blog https://abre.com, contact support@abre.com, updated 2026-02-17) but
+  publishes ZERO public repositories. Expected: Abre has no public API for a client library to
+  wrap. No SDKs pointer is emitted.
+packages: []
+x-evidence:
+  fetched: '2026-09-06'
+  probes:
+  - url: https://registry.npmjs.org/-/v1/search?text=abre&size=20
+    http_status: 200
+    note: no first-party result
+  - url: https://registry.npmjs.org/abre-io
+    http_status: 404
+  - url: https://registry.npmjs.org/abre-sdk
+    http_status: 404
+  - url: https://pypi.org/pypi/abre/json
+    http_status: 404
+  - url: https://api.github.com/orgs/abreio
+    http_status: 200
+    note: public_repos 0
+  - url: https://api.github.com/orgs/abreio/repos?per_page=100
+    http_status: 200
+    note: empty array

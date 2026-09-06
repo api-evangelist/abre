@@ -1,7 +1,22 @@
 aid: abre
 name: Abre
-description: 'Abre is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://abre.com/wp-content/uploads/2021/09/abre_logo_light.svg
+description: >-
+  Abre is a K-12 education data platform, founded in 2017 in Cincinnati, Ohio, that consolidates
+  student, staff and operational data from a district's student information system and its EdTech
+  tools into a single interface built around a Student360 learner profile. The platform ships as a
+  set of role-based apps — Analytics and Insight dashboards, Assessment, Health & Wellness, MTSS &
+  Intervention, Student Success & ePortfolio, Staff Development, Communication & Engagement,
+  Curriculum, Learn and Focus — plus a marketplace of shareable dashboard packs, plans, forms,
+  courses and surveys. Abre is sold to districts as a managed Data-as-a-Service engagement rather
+  than as a developer product: it is a heavy CONSUMER of other people's APIs and publishes none of
+  its own. Districts feed Abre through five documented rostering paths — an automated SIS
+  integration over SFTP, SchoolDay (GG4L) School Passport, ClassLink OneRoster, OneRoster ZIP files
+  dropped on SFTP, and a native 1EdTech OneRoster 1.1 REST API sync authenticated with OAuth 2.0 —
+  and sign in through OAuth 2.0 SSO with Google, Microsoft, Apple, ClassLink, Clever, GG4L or
+  Facebook. As of this profiling pass Abre publishes no developer portal, no API reference, no
+  OpenAPI or other machine-readable contract, no SDKs and no public MCP or agent surface; its
+  public technical surface is a Zendesk help center of integration guides for the APIs it ingests.
 url: https://raw.githubusercontent.com/api-evangelist/abre/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +27,17 @@ created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Education
+- K-12
+- EdTech
+- Education Data
+- Student Information Systems
+- Rostering
+- Interoperability
+- OneRoster
+- Analytics
+- Dashboards
+- Single Sign On
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +45,83 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/abre-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://abre.com/
+- type: About
+  url: https://abre.com/our-story/
+- type: Support
+  url: https://help.abre.io/hc/en-us
+- type: HelpCenter
+  url: https://help.abre.io/hc/en-us
+- type: Integrations
+  name: Abre help center — Integrations section
+  url: https://help.abre.io/hc/en-us/sections/1260802908289-Integrations
+- type: StatusPage
+  url: https://help.abre.io/hc/en-us/articles/4405261788699-Abre-Status
+- type: Blog
+  url: https://abre.com/resource/
+- type: Pricing
+  url: https://abre.com/pricing/
+- type: TermsOfService
+  url: https://abre.com/privacyandcompliance/terms-of-use/
+- type: PrivacyPolicy
+  url: https://abre.com/privacyandcompliance/privacy/
+- type: Compliance
+  url: https://abre.com/privacyandcompliance/
+- type: ServiceLevelAgreement
+  url: https://abre.com/privacyandcompliance/service-level-agreement/
+- type: GitHubOrganization
+  url: https://github.com/abreio
+- type: Careers
+  url: https://abre.com/join-our-team/
+- type: Partners
+  name: Abre Marketplace
+  url: https://marketplace.abre.com/
+- type: LLMsTxt
+  url: llms/abre-llms.txt
+- type: Lifecycle
+  url: lifecycle/abre-lifecycle.yml
+- type: Conformance
+  url: conformance/abre-conformance.yml
+- type: Plans
+  url: plans/abre-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/abre-rate-limits.yml
+- type: Packages
+  url: packages/abre-packages.yml
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Abre sells a managed Data-as-a-Service engagement to K-12 districts and is a client of other
+    people's APIs rather than a publisher of one — its help center's six "API" articles are all
+    guides for calling INTO Abre's ingestion (OneRoster 1.1, ClassLink, SchoolDay/GG4L, third-party
+    assessment feeds), the only real API host candidate, auth.abre.io, is a catch-all that answers
+    200 "Please provide authentication parameters" even for a negative-control path that cannot
+    exist, and developers.abre.com / docs.abre.com / api.abre.com are all unmapped Cloudways
+    placeholder domains.
+  evidence:
+  - url: https://api.abre.com/
+    status: 403
+  - url: https://developers.abre.com/
+    status: 403
+  - url: https://docs.abre.com/
+    status: 403
+  - url: https://abre.com/openapi.json
+    status: 404
+  - url: https://abre.com/.well-known/agent-card.json
+    status: 404
+  - url: https://auth.abre.io/.well-known/abre-negative-control-7f3ab91c.json
+    status: 200
+  - url: https://help.abre.io/api/v2/help_center/articles/search.json?query=webhook
+    status: 200
+  - url: https://api.github.com/orgs/abreio/repos?per_page=100
+    status: 200
+  checked: '2026-09-06'

@@ -1,0 +1,23 @@
+generated: '2026-09-06'
+method: searched
+source: https://abre.com/pricing/
+plan_count: 0
+currency: null
+pricing_model: quote-only
+note: >-
+  Abre publishes no pricing tiers. The page at https://abre.com/pricing/ is titled "Request
+  Pricing" and carries no plan names, prices, quotas or overages — only a value proposition
+  ("Discover how 1.4M users drive student outcomes with Abre"), district testimonials, a
+  "Schedule Meeting" call to action and a phone number (513-713-1609). Districts are quoted
+  through a sales conversation. There is no API product to price: Abre sells a managed
+  Data-as-a-Service engagement, not developer access.
+plans: []
+x-evidence:
+  fetched: '2026-09-06'
+  probes:
+  - url: https://abre.com/pricing/
+    http_status: 200
+    note: 'Page title "Request Pricing"; contact-sales only, no published tiers.'
+  - url: https://abre.com/start/
+    http_status: 200
+    note: Schedule-a-meeting form the pricing page routes to.

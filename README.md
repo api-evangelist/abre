@@ -64,5 +64,22 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Abre is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Abre is a K-12 education data platform, founded in 2017 in Cincinnati, Ohio, that consolidates
+student, staff and operational data from a district's student information system and its EdTech
+tools into a single role-based interface built around a Student360 learner profile. It ships as a
+set of apps — Analytics and Insight dashboards, Assessment, Health & Wellness, MTSS & Intervention,
+Student Success & ePortfolio, Staff Development, Communication & Engagement, Curriculum, Learn and
+Focus — plus a marketplace of shareable dashboard packs, plans, forms, courses and surveys.
+
+**Abre consumes education APIs; it publishes none.** Districts feed Abre through five documented
+rostering paths — an automated SIS integration over SFTP, SchoolDay (GG4L) School Passport,
+ClassLink OneRoster, OneRoster ZIP files over SFTP, and a native 1EdTech OneRoster 1.1 REST API
+sync authenticated with OAuth 2.0 — and sign in through OAuth 2.0 SSO with Google, Microsoft,
+Apple, ClassLink, Clever, GG4L or Facebook. As of 2026-09-06 Abre publishes no developer portal,
+no API reference, no OpenAPI or other machine-readable contract, no SDKs, no webhooks, and no MCP
+or agent surface. See `apis.yml` `x-coverage` for the probed evidence.
+
+- Website: https://abre.com/
+- Help center: https://help.abre.io/hc/en-us
+- Status: https://help.abre.io/hc/en-us/articles/4405261788699-Abre-Status
+- GitHub organization: https://github.com/abreio (zero public repositories)

@@ -1,0 +1,58 @@
+generated: '2026-09-06'
+method: searched
+source: https://abre.com/privacyandcompliance/service-level-agreement/
+scope: >-
+  Abre publishes no public API, so there is no API versioning, deprecation or Sunset-header
+  policy to record. What Abre does publish is a platform-level SLA and a manually-maintained
+  status page. Both are captured here; the API-lifecycle fields are honestly null.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: No public API and no published API version scheme.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: >-
+    No API deprecation policy is published. The SLA does commit to 72 hours notice to
+    customers before any scheduled platform downtime, which is a maintenance-notice
+    commitment, not an API deprecation policy.
+sla:
+  url: https://abre.com/privacyandcompliance/service-level-agreement/
+  uptime_target: 99.9%
+  support_hours: 7am-5pm EST
+  response_targets:
+  - priority: P1 Critical
+    first_response: 1 hour
+    resolution: 3 hours
+  - priority: P2 Major
+    first_response: 4 hours
+    resolution: 10 hours
+  - priority: P3 Ordinary
+    first_response: 4 hours
+    resolution: 30 hours
+  - priority: P4 Low
+    first_response: 8 hours
+    resolution: null
+  scheduled_maintenance_notice: 72 hours
+status_page: https://help.abre.io/hc/en-us/articles/4405261788699-Abre-Status
+status_page_form: >-
+  A hand-maintained help-center article, not a hosted status service (no Statuspage/Instatus
+  component list, no RSS/Atom or JSON feed, no incident history API). It carries a current
+  GREEN/RED state plus a dated reverse-chronological incident log.
+status_page_last_updated: '2026-03-24'
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-09-06'
+  probes:
+  - url: https://abre.com/privacyandcompliance/service-level-agreement/
+    http_status: 200
+  - url: https://help.abre.io/hc/en-us/articles/4405261788699-Abre-Status
+    http_status: 403
+    note: >-
+      Cloudflare bot challenge for our crawler; the article is real and public — fetched via the
+      open Zendesk help-center API at
+      https://help.abre.io/api/v2/help_center/en-us/articles/4405261788699.json (200), which
+      returns the live body and updated_at 2026-03-24.
+  - url: https://help.abre.io/api/v2/help_center/en-us/articles/4405261788699.json
+    http_status: 200

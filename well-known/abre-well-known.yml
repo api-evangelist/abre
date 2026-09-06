@@ -1,0 +1,331 @@
+generated: '2026-09-06'
+method: probed
+source: live GET of each named /.well-known path (plus /apis.json, /apis.yml, /llms.txt) on every host
+  in apis.yml
+summary: Zero documents. Every named path returned 404 on abre.com, www.abre.com, help.abre.io, marketplace.abre.com
+  and discover.abre.com. platform.abre.io answers 200 with a WordPress holding-page HTML shell for /apis.json
+  and /llms.txt (soft-404). auth.abre.io answers 200 with the same 40-byte body for every path INCLUDING
+  the negative control, so it is a path-echoing catch-all and every 200 on it is discarded. No WellKnown,
+  SecurityTxt, APICatalog or AgentCard pointer is emitted — this file records an absence, not a presence.
+hit_count: 0
+hosts:
+- host: https://abre.com
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://www.abre.com
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://help.abre.io
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://marketplace.abre.com
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://discover.abre.com
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://platform.abre.io
+  hit_count: 0
+  path_echo_control: passed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 0
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  note: WordPress 'We Miss Our Partnership' holding page answers 200 with an HTML shell for /apis.json
+    and /llms.txt. Soft-404, not a document.
+- host: https://auth.abre.io
+  hit_count: 0
+  path_echo_control: failed
+  soft_404_control:
+    path: /.well-known/abre-negative-control-7f3ab91c.json
+    status: 200
+    bytes: 40
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/api-catalog.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/ucp.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/acp.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/apis.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /apis.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /apis.yml
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: soft-404 / catch-all HTML body, not a document
+  note: 'Catch-all: every path answered 200 with the 40-byte text/html body ''Please provide authentication
+    parameters'', including the negative control. path_echo_control failed; no hit on this host is real.'

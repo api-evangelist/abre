@@ -1,0 +1,24 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://help.abre.io (Zendesk help center, searched via the open help-center API for "API",
+  "rate limit", "throttle" and "webhook") and https://abre.com/
+limit_count: 0
+note: >-
+  No rate limits are published because Abre publishes no public API. A help-center search for
+  "API" returns six articles, all of them guides for APIs Abre CONSUMES (OneRoster 1.1, ClassLink,
+  SchoolDay/GG4L, third-party assessment feeds, a Google OAuth allow-list). A search for "webhook"
+  returns zero articles. No quota, window, burst, 429 behaviour or RateLimit-* / X-RateLimit-* /
+  Retry-After response header is documented anywhere on Abre's public surface, and there is no
+  unauthenticated endpoint on which to observe one. This is an honest zero, not an unchecked field.
+rate_limits: []
+response_headers: []
+x-evidence:
+  fetched: '2026-09-06'
+  probes:
+  - url: https://help.abre.io/api/v2/help_center/articles/search.json?query=API
+    http_status: 200
+    note: 'count 6 — all inbound-integration guides; none documents an Abre-served API.'
+  - url: https://help.abre.io/api/v2/help_center/articles/search.json?query=webhook
+    http_status: 200
+    note: count 0

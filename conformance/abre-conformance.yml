@@ -1,0 +1,101 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://abre.com/security/, https://abre.com/privacyandcompliance/, and the Abre help center
+  integration guides (help.abre.io Integrations section, read via the open Zendesk help-center API)
+scope: >-
+  Abre publishes no machine-readable contract of its own, so nothing here is derived from a spec.
+  Every entry is either a compliance claim Abre publishes in prose, or a standard Abre states it
+  CONSUMES as a client. The `role` field records which — a consumed standard is real
+  interoperability work, but it is not the provider declaring a domain standard in its own
+  contract, and it must not be scored as one.
+standards:
+- id: oneroster-1.1
+  name: 1EdTech OneRoster 1.1 (REST API + CSV/ZIP bulk)
+  conforms: true
+  role: consumer
+  evidence: >-
+    "Integration Guide: OneRoster 1.1 API" — "OneRoster 1.1 API will sync your basic Student
+    Information System data into Abre via API"; requires "A Student Information System that
+    supports native OneRoster 1.1 integration with OAuth 2.0 authentication" and a BaseURL,
+    AuthURL/TokenURL, ClientID and ClientSecret supplied by the district. A sibling guide,
+    "Integration Guide: OneRoster Zip Files", covers the bulk CSV/ZIP profile over SFTP.
+  evidence_url: https://help.abre.io/hc/en-us/articles/34378897490075-Integration-Guide-OneRoster-1-1-API
+  note: >-
+    Abre is the OneRoster CLIENT. Abre calls the district's SIS; it does not serve a OneRoster
+    endpoint. Domain-standard conformance in the Kin Score reads the provider's own contract, and
+    Abre has none, so this entry is informational and must not award domain_standard_conformance.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: true
+  role: consumer
+  evidence: >-
+    Used in two directions Abre documents: as the client credential grant it presents to a
+    district's OneRoster 1.1 SIS endpoint, and as the inbound SSO mechanism — "Abre seamlessly
+    integrates with oAuth 2.0 to provide a robust Single Sign-On (SSO) experience" for Google,
+    Microsoft, Apple, ClassLink, Clever, GG4L and Facebook.
+  evidence_url: https://help.abre.io/hc/en-us/articles/24453565655195-Single-Sign-On
+- id: ferpa
+  name: Family Educational Rights and Privacy Act (FERPA)
+  conforms: true
+  role: provider
+  evidence: >-
+    Abre Data Security & Compliance page: "Is Abre.io compliant with the Family Educational Rights
+    and Privacy Act (FERPA)? Yes."
+  evidence_url: https://abre.com/security/
+- id: coppa
+  name: Children's Online Privacy Protection Act of 1998 (COPPA)
+  conforms: true
+  role: provider
+  evidence: >-
+    Abre Data Security & Compliance page: "Is Abre.io compliant with the Children's Online Privacy
+    Protection Act of 1998 (COPPA)? Yes. It is the district/school's responsibility to obtain
+    parental permission for students under the age of 13."
+  evidence_url: https://abre.com/security/
+- id: soc2
+  name: SOC 2
+  conforms: false
+  evidence: >-
+    Not claimed anywhere on abre.com/security/, abre.com/privacyandcompliance/ or the help center.
+    The security page states only "Regular security audits" without naming an audit standard,
+    auditor or report.
+- id: iso-27001
+  name: ISO/IEC 27001
+  conforms: false
+  evidence: Not claimed on any public Abre page probed on 2026-09-06.
+- id: gdpr
+  name: GDPR
+  conforms: false
+  evidence: >-
+    No GDPR statement found; Abre's published customer base and privacy language are United
+    States K-12 districts.
+- id: ed-fi
+  name: Ed-Fi Data Standard
+  conforms: false
+  evidence: >-
+    Not named in any of the five rostering paths Abre documents (Automated SIS over SFTP,
+    SchoolDay/GG4L, ClassLink OneRoster, OneRoster ZIP, OneRoster 1.1 API).
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document at any probed location on abre.com, www.abre.com, help.abre.io,
+    marketplace.abre.com, discover.abre.com, platform.abre.io or auth.abre.io.
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: No public API surface to carry an error envelope.
+- id: rfc9116-security-txt
+  name: RFC 9116 security.txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on every Abre host probed 2026-09-06.
+x-evidence:
+  fetched: '2026-09-06'
+  probes:
+  - url: https://abre.com/security/
+    http_status: 200
+  - url: https://abre.com/privacyandcompliance/
+    http_status: 200
+  - url: https://help.abre.io/api/v2/help_center/articles/search.json?query=OneRoster
+    http_status: 200
+    note: 3 articles returned; the OneRoster 1.1 API integration guide is among them.
