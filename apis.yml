@@ -24,7 +24,7 @@ x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-06'
-modified: '2026-09-06'
+modified: '2026-10-06'
 tags:
 - Company
 - Education
@@ -58,6 +58,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://abre.com/resources/blog/
+  type: Blog
+- url: https://abre.com/resources/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/abre-domain-security.yml
 - type: Website
